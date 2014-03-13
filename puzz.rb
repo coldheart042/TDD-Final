@@ -53,4 +53,34 @@ class PuzzleClass
     end
     str_temp.chomp
   end
+
+  def move_up
+    a = 0
+    b = 0
+    while a < @rows.length
+      if @rows[a].index("*") != nil
+        b = @rows[a].index("*")
+        break
+      end
+      a += 1
+    end
+    temp = @rows[a - 1][b]
+    @rows[a - 1][b] = @rows[a][b]
+    @rows[a][b] = temp
+  end
+
+  def move_down
+    a = 0
+    b = 0
+    while a < @rows.length
+      if @rows[a].index("*") != nil
+        b = @rows[a].index("*")
+        break
+      end
+      a += 1
+    end
+    temp = @rows[a + 1][b]
+    @rows[a + 1][b] = @rows[a][b]
+    @rows[a][b] = temp
+  end
 end

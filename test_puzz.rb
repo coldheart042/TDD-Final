@@ -37,4 +37,16 @@ class Test_puzz < MiniTest::Test
     assert_respond_to(@puzzle, :solve, "No method 'solve'")
     assert_equal("*12\n345\n678", @puzzle.solve, "Did not return solution!")
   end
+
+  def test_move_up
+    assert_respond_to(@puzzle, :move_up, "Not there yet")
+    @puzzle.move_up
+    assert_equal("12*\n453\n678", @puzzle.to_s, "Did not return correctly")
+  end
+
+  def test_move_down
+    assert_respond_to(@puzzle, :move_down, "Not created")
+    @puzzle.move_down
+    assert_equal("123\n45*\n67*", @puzzle.to_s, "Did not return correctly")
+  end
 end
